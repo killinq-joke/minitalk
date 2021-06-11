@@ -1,18 +1,34 @@
 NAME	= client
 NAME1	= server
+LIB		= libft.a
 SRCS	= client.c
 SRCS1	= server.c
-OBJS	= $(SRCS=.c:.o)
-OBJS1	= $(SRCS1=.c:.o)
+OBJS	= $(SRCS=c:o)
+OBJS1	= $(SRCS1=c:o)
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
-all:	$(NAME) $(NAME1)
+.PHONY: all
+all:	$(NAME) $(NAME1) $(LIB)
 
-$(NAME):
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+%.o: %.c
+		$(CC) $(CFLAGS) -c $<
 
-$(NAME1):
-		$(CC) $(CFLAGS) $(OBJS1) -o $(NAME1)
+$(NAME):	$(OBJS) $(LIB)
+
+$(NAME1):	$(OBJS1) $(LIB)
+
+$(LIB):
+		make -C libft/
+		mv libft/libft.a .
 
 
+clean:
+	make -C libft/ clean
+	$(RM) $(OBJS) $(LIB)
+
+fclean: clean
+	make -C libft/ fclean
+	$(RM) $(NAME) $(NAME1)
+
+re: fclean all
