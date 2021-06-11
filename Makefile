@@ -22,7 +22,6 @@ $(LIB):
 		make -C libft/
 		mv libft/libft.a .
 
-
 clean:
 	make -C libft/ clean
 	$(RM) $(OBJS) $(LIB)
