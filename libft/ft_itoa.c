@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 14:46:39 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/05/26 16:48:51 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/06/12 18:51:07 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 		symbole++;
 	}
 	i = nb_char(n) + symbole;
-	itoa = ft_calloc(sizeof(char), i + 1);
+	itoa = ft_calloc(sizeof (char), i + 1);
 	if (itoa == 0)
 		return (0);
 	while (i > 0)

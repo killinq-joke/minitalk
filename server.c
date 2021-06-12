@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "minitalk.h"
-#include <stdio.h>
 
 void	ft_sigclient(int sig, siginfo_t pid, void *context)
 {

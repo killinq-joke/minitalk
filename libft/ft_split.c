@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:29:29 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/06/04 11:19:40 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/06/12 18:51:28 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static int	splitter(char *s, char c, char **string)
 			i++;
 			i_str++;
 		}
-		string[j] = ft_calloc(sizeof(char), (i + 1));
+		string[j] = ft_calloc(sizeof (char), (i + 1));
 		if (string[j] == 0)
 			return (-1);
 		ft_wordcpy((char *)s, c, string[j++], i_str - i);
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 	if (s == 0)
 		return (0);
 	j = 0;
-	string = ft_calloc(sizeof(char *), (ft_count((char *)s, c) + 1));
+	string = ft_calloc(sizeof (char *), (ft_count((char *)s, c) + 1));
 	if (string == 0)
 		return (0);
 	j = splitter((char *)s, c, string);
