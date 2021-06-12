@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 21:13:23 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/06/12 18:36:28 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/06/12 19:07:14 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	main(int ac, char **av)
 			i++;
 		}
 		charTobintab(0, servpid);
+		ft_putstr("Message Delivered\n");
 	}
 	else
 	{

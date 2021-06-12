@@ -18,7 +18,7 @@ void	ft_sigclient(int sig, siginfo_t pid, void *context)
 	kill(pid.si_pid, sig);
 }
 
-void	ft_put(int signum, siginfo_t *pid, void *context)
+void	ft_put(int signum, siginfo_t *info, void *context)
 {
 	static int				i = 0;
 	static unsigned char	c = 0;
@@ -38,7 +38,7 @@ void	ft_put(int signum, siginfo_t *pid, void *context)
 		i = 0;
 		c = 0;
 	}
-	kill(pid->si_pid, SIGUSR1);
+	kill(info->si_pid, SIGUSR1);
 }
 
 int	main(void)
