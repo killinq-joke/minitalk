@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 21:13:23 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/06/11 20:05:14 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/06/12 18:36:28 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	isvalidnum(char *pidstr)
 	return (1);
 }
 
-void charTobintab(char c, int pid)
+void	charTobintab(char c, int pid)
 {
 	int	i;
 
@@ -41,9 +41,11 @@ void charTobintab(char c, int pid)
 		else
 			kill(pid, SIGUSR1);
 		i++;
-		while (g_wait);
+		while (g_wait)
+		{
+		}
 		g_wait = 1;
-		usleep(100);
+		usleep(130);
 	}
 }
 
@@ -53,8 +55,7 @@ void	next(int sig)
 	g_wait = 0;
 }
 
-#include <stdio.h>
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	pid_t	servpid;
 	int		i;
